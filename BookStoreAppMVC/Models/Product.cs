@@ -20,5 +20,6 @@ namespace BookStoreAppMVC.Models
         public int CategoryId { get; set; }
         [ForeignKey(name:"CategoryId")]
         public Category? Category { get; set; }
+        public string? ImageUrl { get; set; }
     }
 }

@@ -28,7 +28,8 @@ namespace BookStoreAppMVC.Data
                     ISBN= "9789635826414",
                     Author="George R. R. Martin",
                     Price=4799,
-                    CategoryId = 4
+                    CategoryId = 4,
+                    ImageUrl= "https://www.szukits.hu/storage/images/cache/data/2023.10./tronok_harca_b1_2023-max1920-max1080.jpg"
                 },
                  new Product
                  {
@@ -38,7 +39,8 @@ namespace BookStoreAppMVC.Data
                      ISBN = "9789634478430",
                      Author = "George R. R. Martin",
                      Price = 3999,
-                     CategoryId = 4
+                     CategoryId = 4,
+                     ImageUrl= "https://www.szukits.hu/storage/images/cache/data/Kiadok/alexandra/kiralyok_csataja-rate_bg400-rate_bg600.jpg"
                  },
                  new Product
                  {
@@ -48,7 +50,8 @@ namespace BookStoreAppMVC.Data
                      ISBN = "9789634478461",
                      Author = "George R. R. Martin",
                      Price = 4499,
-                     CategoryId = 4
+                     CategoryId = 4,
+                     ImageUrl= "https://www.szukits.hu/storage/images/cache/data/Kiadok/alexandra/kardok-vihara-b-rate_bg400-rate_bg600.jpg"
                  },
                   new Product
                   {
@@ -58,7 +61,8 @@ namespace BookStoreAppMVC.Data
                       ISBN = "9789634478492",
                       Author = "George R. R. Martin",
                       Price = 3999,
-                      CategoryId = 4
+                      CategoryId = 4,
+                      ImageUrl= "https://www.szukits.hu/storage/images/cache/data/Kiadok/alexandra/varjak_lakomaja-max1920-max1080.jpg"
                   },
                   new Product
                   {
@@ -68,7 +72,8 @@ namespace BookStoreAppMVC.Data
                       ISBN = "9789634478522",
                       Author = "George R. R. Martin",
                       Price = 3999,
-                      CategoryId = 4
+                      CategoryId = 4,
+                      ImageUrl= "https://www.szukits.hu/storage/images/cache/data/Kiadok/alexandra/sarkanyok-tanca-max1920-max1080.jpg"
                   }
                 );
         }

@@ -1,10 +1,12 @@
 ﻿using BookStoreAppMVC.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookStoreAppMVC.Controllers
+namespace BookStoreAppMVC.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
+       
         private readonly IUnitOfWork _unitOfWork;
         public CategoryController(IUnitOfWork unitOfWork)
         {
@@ -12,7 +14,7 @@ namespace BookStoreAppMVC.Controllers
         }
         public IActionResult Index()
         {
-            List<Category>objCategoryList = _unitOfWork.Category.GetAll().ToList();
+            List<Category> objCategoryList = _unitOfWork.Category.GetAll().ToList();
             return View(objCategoryList);
         }
         public IActionResult Create()
@@ -38,11 +40,11 @@ namespace BookStoreAppMVC.Controllers
 
         public IActionResult Edit(int? id)
         {
-            if(id == null || id==0)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
-            Category? categoryFromDatabase = _unitOfWork.Category.Get(u=>u.Id == id);
+            Category? categoryFromDatabase = _unitOfWork.Category.Get(u => u.Id == id);
             /*Category? categoryFromDatabase = _db.Categories.Find(id);*/
             //Category? categoryFromDatabase2 = _db.Categories.FirstOrDefault(u=>u.Id==id);
             //Category? categoryFromDatabase3 = _db.Categories.Where(u => u.Id == id).FirstOrDefault();
@@ -52,7 +54,7 @@ namespace BookStoreAppMVC.Controllers
             }
             return View(categoryFromDatabase);
         }
-       
+
         [HttpPost]
         public IActionResult Edit(Category obj)
         {
@@ -76,8 +78,8 @@ namespace BookStoreAppMVC.Controllers
                 TempData["success"] = "Category updated successfully";
                 return RedirectToAction("Index");
             }
-           return View();
-            
+            return View();
+
         }
         public IActionResult Delete(int? id)
         {
@@ -107,5 +109,5 @@ namespace BookStoreAppMVC.Controllers
             return RedirectToAction("Index");
         }
     }
-    
+
 }
