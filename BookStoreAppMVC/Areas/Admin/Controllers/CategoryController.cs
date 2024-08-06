@@ -1,9 +1,11 @@
 ﻿using BookStoreAppMVC.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStoreAppMVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = StaticDetails.RoleAdmin)]
     public class CategoryController : Controller
     {
        
