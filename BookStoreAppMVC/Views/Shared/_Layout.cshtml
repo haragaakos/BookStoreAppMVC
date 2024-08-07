@@ -27,6 +27,12 @@
                         <li class="nav-item">
                             <a class="nav-link " asp-area="Customer" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link  " asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  " asp-area="Customer" asp-controller="ShoppingCart" asp-action="ViewCart">ShoppingCart</a>
+                        </li>
                         @if (User.IsInRole(StaticDetails.RoleAdmin))
                         {
                             <li class="nav-item dropdown">

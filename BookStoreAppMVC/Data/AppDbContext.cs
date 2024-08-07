@@ -13,6 +13,9 @@ namespace BookStoreAppMVC.Data
         public DbSet <Category> Categories { get; set; }
         public DbSet <Product> Products { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -80,6 +83,18 @@ namespace BookStoreAppMVC.Data
                       ImageUrl= "https://www.szukits.hu/storage/images/cache/data/Kiadok/alexandra/sarkanyok-tanca-max1920-max1080.jpg"
                   }
                 );
+            modelBuilder.Entity<ShoppingCart>()
+                .HasMany(x => x.Items)
+                .WithOne()
+                .HasForeignKey(x => x.ShoppingCartId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<CartItem>()
+                .HasOne(x => x.Product)
+                .WithMany()
+                .HasForeignKey(x => x.ProductId)
+                .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }
